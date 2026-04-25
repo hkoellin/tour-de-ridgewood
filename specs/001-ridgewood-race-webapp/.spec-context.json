@@ -1,0 +1,80 @@
+{
+  "workflow": "speckit",
+  "specName": "001-ridgewood-race-webapp",
+  "branch": "001-ridgewood-race-webapp",
+  "selectedAt": "2026-04-25T22:59:05.060Z",
+  "currentStep": "plan",
+  "status": "planning",
+  "stepHistory": {
+    "specify": {
+      "startedAt": "2026-04-25T23:02:39.874Z",
+      "completedAt": "2026-04-25T23:03:00.410Z"
+    },
+    "plan": {
+      "startedAt": "2026-04-25T23:03:00.451Z",
+      "completedAt": null
+    }
+  },
+  "transitions": [
+    {
+      "step": "specify",
+      "substep": null,
+      "from": {
+        "step": "specify",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:02:39.874Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "from": {
+        "step": "specify",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:02:39.903Z"
+    },
+    {
+      "step": "specify",
+      "substep": null,
+      "from": {
+        "step": "specify",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:02:45.142Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "from": {
+        "step": "plan",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:02:45.162Z"
+    },
+    {
+      "step": "specify",
+      "substep": null,
+      "from": {
+        "step": "specify",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:03:00.410Z"
+    },
+    {
+      "step": "plan",
+      "substep": null,
+      "from": {
+        "step": "plan",
+        "substep": null
+      },
+      "by": "extension",
+      "at": "2026-04-25T23:03:00.451Z"
+    }
+  ]
+}
