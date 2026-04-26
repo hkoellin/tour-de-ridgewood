@@ -1,0 +1,14 @@
+import { SkeletonCard } from "@/components/ui/Skeleton";
+
+export default function LoadingRouteList() {
+  return (
+    <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="h-8 w-48 bg-gray-800 rounded animate-pulse mb-8" aria-hidden="true" />
+      <div className="space-y-4">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <SkeletonCard key={i} />
+        ))}
+      </div>
+    </main>
+  );
+}

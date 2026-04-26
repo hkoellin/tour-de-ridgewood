@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  ci:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Unit & integration tests with coverage
+        run: pnpm test:coverage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXTAUTH_SECRET: test-secret-ci
+          ADMIN_USERNAME: admin
+          ADMIN_PASSWORD_HASH: ${{ secrets.ADMIN_PASSWORD_HASH }}
+          STRAVA_CLIENT_ID: test
+          STRAVA_CLIENT_SECRET: test
+
+      - name: Build
+        run: pnpm build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXTAUTH_URL: http://localhost:3000
+          NEXTAUTH_SECRET: test-secret-ci
+          ADMIN_USERNAME: admin
+          ADMIN_PASSWORD_HASH: ${{ secrets.ADMIN_PASSWORD_HASH }}
+          STRAVA_CLIENT_ID: test
+          STRAVA_CLIENT_SECRET: test
+          NEXT_PUBLIC_RACE_START_DATE: "2025-09-06T09:00:00-04:00"

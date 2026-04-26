@@ -1,0 +1,62 @@
+{
+  "name": "tour-de-ridgewood",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "prisma": "prisma"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "prisma"
+    ]
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-slot": "^1.2.4",
+    "bcryptjs": "^3.0.3",
+    "next": "14.2.35",
+    "next-auth": "5.0.0-beta.31",
+    "pg": "^8.20.0",
+    "prisma": "^7.8.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "swr": "^2.4.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/node": "^20",
+    "@types/pg": "^8.20.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "jsdom": "^29.0.2",
+    "playwright": "^1.59.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.1.5"
+  }
+}

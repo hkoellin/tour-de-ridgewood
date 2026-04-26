@@ -57,6 +57,9 @@ STRAVA_CLIENT_SECRET="your_strava_client_secret"
 ADMIN_USERNAME="admin"
 ADMIN_PASSWORD_HASH="bcrypt-hash-of-your-password"
 # Generate hash: node -e "const b=require('bcryptjs'); console.log(b.hashSync('yourpassword', 12))"
+
+# Race configuration — ISO 8601, used for homepage countdown
+NEXT_PUBLIC_RACE_START_DATE="2025-09-06T09:00:00-04:00"
 ```
 
 ---
@@ -68,6 +71,12 @@ Run Prisma migrations to create the schema:
 ```bash
 pnpm prisma migrate dev --name init
 pnpm prisma generate
+```
+
+Seed the database with the 8 stages and placeholder teams:
+
+```bash
+pnpm prisma db seed
 ```
 
 Verify the connection:
@@ -100,10 +109,12 @@ In your Strava API settings (https://www.strava.com/settings/api), set the **Aut
 
 ## 6. Create Initial Data (Admin)
 
+After seeding (`pnpm prisma db seed`), all 8 stages and 4 placeholder teams are pre-populated.
+
 1. Navigate to http://localhost:3000/login (admin login)
 2. Sign in with `ADMIN_USERNAME` / unhashed password
-3. Go to `/admin/stages` → Create all 8 stages
-4. Go to `/admin/teams` → Create teams with name and color
+3. Go to `/admin/stages` → Review or edit stages as needed
+4. Go to `/admin/teams` → Edit placeholder teams or create new ones
 5. Go to `/admin/runners` → Add runners and assign to teams
 
 ---

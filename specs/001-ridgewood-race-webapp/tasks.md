@@ -16,15 +16,15 @@
 
 **Purpose**: Initialize the Next.js project, install all dependencies, and configure tooling.
 
-- [ ] T001 Initialize Next.js 14 project with TypeScript and App Router: `npx create-next-app@latest . --typescript --tailwind --app --src-dir no --import-alias "@/*"`
-- [ ] T002 Install core dependencies: `pnpm add prisma @prisma/client next-auth@beta zod @radix-ui/react-slot @radix-ui/react-dialog @radix-ui/react-dropdown-menu swr bcryptjs`
-- [ ] T003 Install dev dependencies: `pnpm add -D @types/bcryptjs vitest @vitest/coverage-v8 @testing-library/react @testing-library/jest-dom jsdom playwright @playwright/test`
-- [ ] T004 [P] Configure ESLint and Prettier in `eslint.config.mjs` and `.prettierrc`
-- [ ] T005 [P] Configure Vitest in `vitest.config.ts` with jsdom environment and coverage threshold ≥80%
-- [ ] T006 [P] Configure Playwright in `playwright.config.ts` targeting `http://localhost:3000`
-- [ ] T007 [P] Create `.env.example` with all required variables: `DATABASE_URL`, `DIRECT_URL`, `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`
-- [ ] T008 [P] Extend Tailwind design tokens in `tailwind.config.ts`: race yellow `#FFD700`, race black `#1A1A1A`, race white `#FFFFFF`, team-color utilities, editorial font sizes
-- [ ] T009 [P] Create global styles in `app/globals.css`: CSS reset, base typography, Tailwind directives
+- [X] T001 Initialize Next.js 14 project with TypeScript and App Router: `npx create-next-app@latest . --typescript --tailwind --app --src-dir no --import-alias "@/*"`
+- [X] T002 Install core dependencies: `pnpm add prisma @prisma/client next-auth@beta zod @radix-ui/react-slot @radix-ui/react-dialog @radix-ui/react-dropdown-menu swr bcryptjs`
+- [X] T003 Install dev dependencies: `pnpm add -D @types/bcryptjs vitest @vitest/coverage-v8 @testing-library/react @testing-library/jest-dom jsdom playwright @playwright/test`
+- [X] T004 [P] Configure ESLint and Prettier in `eslint.config.mjs` and `.prettierrc`
+- [X] T005 [P] Configure Vitest in `vitest.config.ts` with jsdom environment and coverage threshold ≥80%
+- [X] T006 [P] Configure Playwright in `playwright.config.ts` targeting `http://localhost:3000`
+- [X] T007 [P] Create `.env.example` with all required variables: `DATABASE_URL`, `DIRECT_URL`, `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH`
+- [X] T008 [P] Extend Tailwind design tokens in `tailwind.config.ts`: race yellow `#FFD700`, race black `#1A1A1A`, race white `#FFFFFF`, team-color utilities, editorial font sizes
+- [X] T009 [P] Create global styles in `app/globals.css`: CSS reset, base typography, Tailwind directives
 
 **Checkpoint**: Project installs and `pnpm dev` starts without errors.
 
@@ -36,19 +36,19 @@
 
 ⚠️ **CRITICAL**: This phase blocks all user story phases.
 
-- [ ] T010 Write Prisma schema in `prisma/schema.prisma`: models Stage, Team, Runner, StravaToken, Result with all fields, relations, indexes, and unique constraints per data-model.md
+- [X] T010 Write Prisma schema in `prisma/schema.prisma`: models Stage, Team, Runner, StravaToken, Result with all fields, relations, indexes, and unique constraints per data-model.md
 - [ ] T011 Run `pnpm prisma migrate dev --name init` and commit generated migration in `prisma/migrations/`
-- [ ] T012 Run `pnpm prisma generate` and create Prisma client singleton in `lib/db/prisma.ts` (global instance pattern for Next.js dev hot-reload)
-- [ ] T013 [P] Create NextAuth configuration in `lib/auth/config.ts`: Strava custom OAuth2 provider and CredentialsProvider for admin; include `jwt` and `session` callbacks; extend session type in `lib/auth/types.ts` to include `runnerId` and `role`
-- [ ] T014 [P] Create NextAuth API handler in `app/api/auth/[...nextauth]/route.ts`
-- [ ] T015 Create `middleware.ts` at project root: protect `/admin/*` routes (require `role === "admin"`), protect `/submit/*` routes (require Strava session), redirect unauthenticated users to `/login`
-- [ ] T016 [P] Create root layout in `app/layout.tsx`: SessionProvider wrapper, global font import, metadata
-- [ ] T017 [P] Create `components/layout/Header.tsx`: nav with Tour de Ridgewood logo, Route and Teams links, Strava connect/avatar button, mobile hamburger menu
-- [ ] T018 [P] Create `components/layout/Footer.tsx`: minimal race branding footer
-- [ ] T019 [P] Create `components/layout/Nav.tsx`: desktop nav bar with yellow accent and dark background per letour.fr visual style
-- [ ] T020 [P] Create Zod schemas in `lib/validation/schemas.ts`: StageSchema, TeamSchema, RunnerSchema, ResultSchema, AdminLoginSchema
-- [ ] T021 [P] Create shared UI primitives in `components/ui/`: Button, Card, Badge, Skeleton (loading), EmptyState, ErrorMessage — all built on `@radix-ui` primitives and Tailwind
-- [ ] T022 [P] Create error handling utilities in `lib/errors.ts`: typed API error responses, Zod error formatter matching `{ error, issues }` contract shape
+- [X] T012 Run `pnpm prisma generate` and create Prisma client singleton in `lib/db/prisma.ts` (global instance pattern for Next.js dev hot-reload)
+- [X] T013 [P] Create NextAuth configuration in `lib/auth/config.ts`: Strava custom OAuth2 provider and CredentialsProvider for admin; include `jwt` and `session` callbacks; extend session type in `lib/auth/types.ts` to include `runnerId` and `role`
+- [X] T014 [P] Create NextAuth API handler in `app/api/auth/[...nextauth]/route.ts`
+- [X] T015 Create `middleware.ts` at project root: protect `/admin/*` routes (require `role === "admin"`), protect `/submit/*` routes (require Strava session), redirect unauthenticated users to `/login`
+- [X] T016 [P] Create root layout in `app/layout.tsx`: SessionProvider wrapper, global font import, metadata
+- [X] T017 [P] Create `components/layout/Header.tsx`: nav with Tour de Ridgewood logo, Route and Teams links, Strava connect/avatar button, mobile hamburger menu
+- [X] T018 [P] Create `components/layout/Footer.tsx`: minimal race branding footer
+- [X] T019 [P] Create `components/layout/Nav.tsx`: desktop nav bar with yellow accent and dark background per letour.fr visual style
+- [X] T020 [P] Create Zod schemas in `lib/validation/schemas.ts`: StageSchema, TeamSchema, RunnerSchema, ResultSchema, AdminLoginSchema
+- [X] T021 [P] Create shared UI primitives in `components/ui/`: Button, Card, Badge, Skeleton (loading), EmptyState, ErrorMessage — all built on `@radix-ui` primitives and Tailwind
+- [X] T022 [P] Create error handling utilities in `lib/errors.ts`: typed API error responses, Zod error formatter matching `{ error, issues }` contract shape
 
 **Checkpoint**: Foundation complete — `pnpm build` succeeds, auth routes respond, DB connection verified via `pnpm prisma studio`.
 
@@ -64,20 +64,20 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T023 [P] [US1] Write unit tests for stage validation schema in `tests/unit/validation/stage.test.ts`: valid stage passes, invalid stageNumber (0, 9) fails, missing required fields fail, invalid stravaEmbedUrl pattern fails
-- [ ] T024 [P] [US1] Write integration tests for `GET /api/stages` and `GET /api/stages/[stageNumber]` in `tests/integration/api/stages.test.ts`: returns all stages ordered by number, returns single stage by number, returns 404 for unknown number
-- [ ] T025 [P] [US1] Write component tests for `StageCard` in `tests/unit/components/StageCard.test.tsx`: renders stage number, name, date, start/end, type badge; links to correct detail URL
-- [ ] T026 [P] [US1] Write component tests for `StageMap` in `tests/unit/components/StageMap.test.tsx`: renders iframe with correct src when stravaEmbedUrl present, renders fallback when null
+- [X] T023 [P] [US1] Write unit tests for stage validation schema in `tests/unit/validation/stage.test.ts`: valid stage passes, invalid stageNumber (0, 9) fails, missing required fields fail, invalid stravaEmbedUrl pattern fails
+- [X] T024 [P] [US1] Write integration tests for `GET /api/stages` and `GET /api/stages/[stageNumber]` in `tests/integration/api/stages.test.ts`: returns all stages ordered by number, returns single stage by number, returns 404 for unknown number
+- [X] T025 [P] [US1] Write component tests for `StageCard` in `tests/unit/components/StageCard.test.tsx`: renders stage number, name, date, start/end, type badge; links to correct detail URL
+- [X] T026 [P] [US1] Write component tests for `StageMap` in `tests/unit/components/StageMap.test.tsx`: renders iframe with correct src when stravaEmbedUrl present, renders fallback when null
 
 ### Implementation for User Story 1
 
-- [ ] T027 [P] [US1] Create `GET /api/stages/route.ts`: query all stages ordered by `stageNumber`, return array per api-routes.md contract
-- [ ] T028 [P] [US1] Create `GET /api/stages/[stageNumber]/route.ts`: query stage by number, return 404 with `{ error }` if not found
-- [ ] T029 [P] [US1] Create `components/stages/StageCard.tsx`: stage number badge, name, date, start→end locations, stage type chip, link to detail page; implement loading skeleton and empty states
-- [ ] T030 [P] [US1] Create `components/stages/StageMap.tsx`: Strava iframe embed with `stravaEmbedUrl`; fallback "Map coming soon" placeholder when URL is null
-- [ ] T031 [US1] Create stage list page `app/(public)/route/page.tsx`: fetch all stages via `GET /api/stages` (RSC), render list of StageCards, include page title and race context copy
-- [ ] T032 [US1] Create stage detail page `app/(public)/route/[stageNumber]/page.tsx`: fetch stage by number (RSC), render StageMap, distance, elevation description, stage description, back navigation; 404 if not found
-- [ ] T033 [US1] Add "Route" link to `components/layout/Nav.tsx` pointing to `/route`
+- [X] T027 [P] [US1] Create `GET /api/stages/route.ts`: query all stages ordered by `stageNumber`, return array per api-routes.md contract
+- [X] T028 [P] [US1] Create `GET /api/stages/[stageNumber]/route.ts`: query stage by number, return 404 with `{ error }` if not found
+- [X] T029 [P] [US1] Create `components/stages/StageCard.tsx`: stage number badge, name, date, start→end locations, stage type chip, link to detail page; implement loading skeleton and empty states
+- [X] T030 [P] [US1] Create `components/stages/StageMap.tsx`: Strava iframe embed with `stravaEmbedUrl`; fallback "Map coming soon" placeholder when URL is null
+- [X] T031 [US1] Create stage list page `app/(public)/route/page.tsx`: fetch all stages via `GET /api/stages` (RSC), render list of StageCards, include page title and race context copy
+- [X] T032 [US1] Create stage detail page `app/(public)/route/[stageNumber]/page.tsx`: fetch stage by number (RSC), render StageMap, distance, elevation description, stage description, back navigation; 404 if not found
+- [X] T033 [US1] Add "Route" link to `components/layout/Nav.tsx` pointing to `/route`
 
 **Checkpoint**: US1 fully functional. Visit `/route` — all 8 stages display. Click any stage — detail page with Strava embed loads. No auth required.
 
@@ -93,23 +93,23 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T034 [P] [US2] Write integration tests for `GET /api/teams`, `GET /api/teams/[teamId]`, `GET /api/runners/[runnerId]` in `tests/integration/api/teams.test.ts`: returns teams with runnerCount, returns team with runners array, returns runner with results, returns 404 for unknown IDs
-- [ ] T035 [P] [US2] Write component tests for `TeamCard` in `tests/unit/components/TeamCard.test.tsx`: renders team name, color swatch, runner count; links to team detail
-- [ ] T036 [P] [US2] Write component tests for `RunnerRow` in `tests/unit/components/RunnerRow.test.tsx`: renders runner name, Strava linked badge when stravaLinked true; links to runner profile
-- [ ] T037 [P] [US2] Write component test for runner profile results table in `tests/unit/components/RunnerResultsTable.test.tsx`: renders results rows; renders "No results yet" when results array is empty
+- [X] T034 [P] [US2] Write integration tests for `GET /api/teams`, `GET /api/teams/[teamId]`, `GET /api/runners/[runnerId]` in `tests/integration/api/teams.test.ts`: returns teams with runnerCount, returns team with runners array, returns runner with results, returns 404 for unknown IDs
+- [X] T035 [P] [US2] Write component tests for `TeamCard` in `tests/unit/components/TeamCard.test.tsx`: renders team name, color swatch, runner count; links to team detail
+- [X] T036 [P] [US2] Write component tests for `RunnerRow` in `tests/unit/components/RunnerRow.test.tsx`: renders runner name, Strava linked badge when stravaLinked true; links to runner profile
+- [X] T037 [P] [US2] Write component test for runner profile results table in `tests/unit/components/RunnerResultsTable.test.tsx`: renders results rows; renders "No results yet" when results array is empty
 
 ### Implementation for User Story 2
 
-- [ ] T038 [P] [US2] Create `GET /api/teams/route.ts`: query all teams with `_count: { runners: true }`, return array with `runnerCount`
-- [ ] T039 [P] [US2] Create `GET /api/teams/[teamId]/route.ts`: query team with runners, return 404 if not found; include `stravaLinked: runner.stravaAthleteId !== null` per runner
-- [ ] T040 [P] [US2] Create `GET /api/runners/[runnerId]/route.ts`: query runner with team and results (joined with stage for stageNumber/stageName), return 404 if not found
-- [ ] T041 [P] [US2] Create `components/teams/TeamCard.tsx`: team name, color swatch strip, runner count badge, link to detail
-- [ ] T042 [P] [US2] Create `components/teams/RunnerRow.tsx`: runner name, team color dot, Strava badge if linked, link to profile
-- [ ] T043 [P] [US2] Create `components/results/RunnerResultsTable.tsx`: table of stage results (stageNumber, stageName, elapsedTime formatted, submittedAt); EmptyState "No results yet" when empty
-- [ ] T044 [US2] Create teams list page `app/(public)/teams/page.tsx`: fetch all teams (RSC), render grid of TeamCards, page title
-- [ ] T045 [US2] Create team detail page `app/(public)/teams/[teamId]/page.tsx`: fetch team with runners (RSC), render team header with color, roster of RunnerRows; 404 if not found
-- [ ] T046 [US2] Create runner profile page `app/(public)/teams/runners/[runnerId]/page.tsx`: fetch runner (RSC), render name, team affiliation, RunnerResultsTable; 404 if not found
-- [ ] T047 [US2] Add "Teams" link to `components/layout/Nav.tsx` pointing to `/teams`
+- [X] T038 [P] [US2] Create `GET /api/teams/route.ts`: query all teams with `_count: { runners: true }`, return array with `runnerCount`
+- [X] T039 [P] [US2] Create `GET /api/teams/[teamId]/route.ts`: query team with runners, return 404 if not found; include `stravaLinked: runner.stravaAthleteId !== null` per runner
+- [X] T040 [P] [US2] Create `GET /api/runners/[runnerId]/route.ts`: query runner with team and results (joined with stage for stageNumber/stageName), return 404 if not found
+- [X] T041 [P] [US2] Create `components/teams/TeamCard.tsx`: team name, color swatch strip, runner count badge, link to detail
+- [X] T042 [P] [US2] Create `components/teams/RunnerRow.tsx`: runner name, team color dot, Strava badge if linked, link to profile
+- [X] T043 [P] [US2] Create `components/results/RunnerResultsTable.tsx`: table of stage results (stageNumber, stageName, elapsedTime formatted, submittedAt); EmptyState "No results yet" when empty
+- [X] T044 [US2] Create teams list page `app/(public)/teams/page.tsx`: fetch all teams (RSC), render grid of TeamCards, page title
+- [X] T045 [US2] Create team detail page `app/(public)/teams/[teamId]/page.tsx`: fetch team with runners (RSC), render team header with color, roster of RunnerRows; 404 if not found
+- [X] T046 [US2] Create runner profile page `app/(public)/teams/runners/[runnerId]/page.tsx`: fetch runner (RSC), render name, team affiliation, RunnerResultsTable; 404 if not found
+- [X] T047 [US2] Add "Teams" link to `components/layout/Nav.tsx` pointing to `/teams`
 
 **Checkpoint**: US2 fully functional independent of US3–US6. Strava connection not required to browse.
 
@@ -125,18 +125,18 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T048 [P] [US3] Write unit tests for Strava token refresh logic in `tests/unit/strava/tokenRefresh.test.ts`: refreshes when `expiresAt < now`, returns cached token when valid, throws on refresh API failure
-- [ ] T049 [P] [US3] Write integration test for Strava OAuth callback flow in `tests/integration/auth/stravaCallback.test.ts`: upserts StravaToken record, sets `runnerId` in session when runner found by `stravaAthleteId`, handles unknown athlete gracefully
-- [ ] T050 [P] [US3] Write e2e test stub in `tests/e2e/stravaAuth.spec.ts`: documents the expected OAuth redirect URL, callback behavior, and session state (mocked Strava responses)
+- [X] T048 [P] [US3] Write unit tests for Strava token refresh logic in `tests/unit/strava/tokenRefresh.test.ts`: refreshes when `expiresAt < now`, returns cached token when valid, throws on refresh API failure
+- [X] T049 [P] [US3] Write integration test for Strava OAuth callback flow in `tests/integration/auth/stravaCallback.test.ts`: upserts StravaToken record, sets `runnerId` in session when runner found by `stravaAthleteId`, handles unknown athlete gracefully
+- [X] T050 [P] [US3] Write e2e test stub in `tests/e2e/stravaAuth.spec.ts`: documents the expected OAuth redirect URL, callback behavior, and session state (mocked Strava responses)
 
 ### Implementation for User Story 3
 
-- [ ] T051 [US3] Complete Strava OAuth2 provider in `lib/auth/config.ts`: `jwt` callback stores `access_token`, `refresh_token`, `expires_at`; looks up Runner by `stravaAthleteId`; upserts `StravaToken`; sets `runnerId` and `role: "participant"` in session
-- [ ] T052 [US3] Create token refresh helper in `lib/strava/token.ts`: `refreshStravaToken(refreshToken)` — POST to Strava `/oauth/token`, return new tokens, throw typed `StravaApiError` on failure
-- [ ] T053 [US3] Update `lib/auth/config.ts` jwt callback to call `refreshStravaToken` when `expires_at < Date.now() / 1000 - 300` and update `StravaToken` in DB
-- [ ] T054 [US3] Update `components/layout/Header.tsx`: show Strava avatar + name when session has `runnerId`; show "Connect with Strava" button (links to NextAuth Strava sign-in) when not connected; show Strava orange brand button styling
-- [ ] T055 [US3] Update team detail page `app/(public)/teams/[teamId]/page.tsx`: highlight authenticated runner's row in roster (bold name + "You" badge) when `session.user.runnerId` matches
-- [ ] T056 [US3] Create Strava auth error page `app/(public)/auth/error/page.tsx`: human-readable error message for denied/failed Strava OAuth; "Try again" button per FR-015 and spec scenario 4
+- [X] T051 [US3] Complete Strava OAuth2 provider in `lib/auth/config.ts`: `jwt` callback stores `access_token`, `refresh_token`, `expires_at`; looks up Runner by `stravaAthleteId`; upserts `StravaToken`; sets `runnerId` and `role: "participant"` in session
+- [X] T052 [US3] Create token refresh helper in `lib/strava/token.ts`: `refreshStravaToken(refreshToken)` — POST to Strava `/oauth/token`, return new tokens, throw typed `StravaApiError` on failure
+- [X] T053 [US3] Update `lib/auth/config.ts` jwt callback to call `refreshStravaToken` when `expires_at < Date.now() / 1000 - 300` and update `StravaToken` in DB
+- [X] T054 [US3] Update `components/layout/Header.tsx`: show Strava avatar + name when session has `runnerId`; show "Connect with Strava" button (links to NextAuth Strava sign-in) when not connected; show Strava orange brand button styling
+- [X] T055 [US3] Update team detail page `app/(public)/teams/[teamId]/page.tsx`: highlight authenticated runner's row in roster (bold name + "You" badge) when `session.user.runnerId` matches
+- [X] T056 [US3] Create Strava auth error page `app/(public)/auth/error/page.tsx`: human-readable error message for denied/failed Strava OAuth; "Try again" button per FR-015 and spec scenario 4
 
 **Checkpoint**: US3 functional. Click "Connect with Strava" → authorize → return to site authenticated. Team roster highlights the connected runner.
 
@@ -152,23 +152,23 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T057 [P] [US4] Write unit tests for Strava activity fetcher in `tests/unit/strava/activities.test.ts`: filters by Run type only, computes correct `after`/`before` unix timestamps for NY timezone, handles empty response, throws `StravaApiError` on non-200
-- [ ] T058 [P] [US4] Write unit tests for result submission validation in `tests/unit/validation/result.test.ts`: valid payload passes, missing stageId fails, elapsedSeconds ≤ 0 fails
+- [X] T057 [P] [US4] Write unit tests for Strava activity fetcher in `tests/unit/strava/activities.test.ts`: filters by Run type only, computes correct `after`/`before` unix timestamps for NY timezone, handles empty response, throws `StravaApiError` on non-200
+- [X] T058 [P] [US4] Write unit tests for result submission validation in `tests/unit/validation/result.test.ts`: valid payload passes, missing stageId fails, elapsedSeconds ≤ 0 fails
 - [ ] T059 [P] [US4] Write integration tests for `POST /api/results` in `tests/integration/api/results.test.ts`: creates result on first submit (201), updates result on duplicate (200), rejects unauthenticated request (401), rejects wrong runner (403)
-- [ ] T060 [P] [US4] Write integration tests for `GET /api/results/[stageNumber]` in `tests/integration/api/results.test.ts`: returns ranked leaderboard sorted by elapsedSeconds ASC, returns empty array when no results
-- [ ] T061 [P] [US4] Write integration test for `GET /api/participant/activities/[stageNumber]` in `tests/integration/api/activities.test.ts`: returns activities from Strava (mocked), returns 502 when Strava is unavailable
+- [X] T060 [P] [US4] Write integration tests for `GET /api/results/[stageNumber]` in `tests/integration/api/results.test.ts`: returns ranked leaderboard sorted by elapsedSeconds ASC, returns empty array when no results
+- [X] T061 [P] [US4] Write integration test for `GET /api/participant/activities/[stageNumber]` in `tests/integration/api/activities.test.ts`: returns activities from Strava (mocked), returns 502 when Strava is unavailable
 
 ### Implementation for User Story 4
 
-- [ ] T062 [P] [US4] Create Strava activities fetcher in `lib/strava/activities.ts`: `getActivitiesForStageDate(accessToken, stageDate)` — GET `/athlete/activities` with computed `after`/`before`, filter `type === "Run"`, map to `StravaActivity` type, throw `StravaApiError` with status on failure
-- [ ] T063 [P] [US4] Create `GET /api/participant/activities/[stageNumber]/route.ts`: verify Strava session, look up stage date, refresh token if needed, call `getActivitiesForStageDate`, return mapped array; return `[]` if no runs; return 502 if Strava unreachable
-- [ ] T064 [P] [US4] Create `POST /api/results/route.ts`: validate body with `ResultSchema`; verify session `runnerId`; upsert `Result` using Prisma `upsert` on `(runnerId, stageId)` unique constraint; return 201 on create, 200 on update
-- [ ] T065 [P] [US4] Create `GET /api/results/[stageNumber]/route.ts`: look up stage by number, query results with runner+team join, sort by `elapsedSeconds ASC`, return ranked leaderboard array
-- [ ] T066 [P] [US4] Create `components/results/ActivityPicker.tsx`: list of StravaActivity cards (name, date, distance, elapsed time formatted as HH:MM:SS); selected state; confirm button; "No activity found" EmptyState
-- [ ] T067 [P] [US4] Create `components/results/LeaderboardTable.tsx`: ranked table (rank, name, team color dot, team name, formatted time, submitted date); loading skeleton; EmptyState "No results yet"
-- [ ] T068 [US4] Create result submission page `app/(participant)/submit/[stageNumber]/page.tsx`: show stage info, render ActivityPicker with activities from `/api/participant/activities/[stageNumber]`; POST to `/api/results` on confirm; redirect to `/results/[stageNumber]` on success; duplicate submission notice if already submitted
-- [ ] T069 [US4] Create stage results page `app/(public)/results/[stageNumber]/page.tsx`: fetch leaderboard from `GET /api/results/[stageNumber]` (RSC), render LeaderboardTable, stage header; "Submit your result" CTA for authenticated runners who haven't submitted yet
-- [ ] T070 [US4] Add "Submit Result" button to stage detail page `app/(public)/route/[stageNumber]/page.tsx`: visible only for authenticated runners, links to `/submit/[stageNumber]`
+- [X] T062 [P] [US4] Create Strava activities fetcher in `lib/strava/activities.ts`: `getActivitiesForStageDate(accessToken, stageDate)` — GET `/athlete/activities` with computed `after`/`before`, filter `type === "Run"`, map to `StravaActivity` type, throw `StravaApiError` with status on failure
+- [X] T063 [P] [US4] Create `GET /api/participant/activities/[stageNumber]/route.ts`: verify Strava session, look up stage date, refresh token if needed, call `getActivitiesForStageDate`, return mapped array; return `[]` if no runs; return 502 if Strava unreachable
+- [X] T064 [P] [US4] Create `POST /api/results/route.ts`: validate body with `ResultSchema`; verify session `runnerId`; upsert `Result` using Prisma `upsert` on `(runnerId, stageId)` unique constraint; return 201 on create, 200 on update
+- [X] T065 [P] [US4] Create `GET /api/results/[stageNumber]/route.ts`: look up stage by number, query results with runner+team join, sort by `elapsedSeconds ASC`, return ranked leaderboard array
+- [X] T066 [P] [US4] Create `components/results/ActivityPicker.tsx`: list of StravaActivity cards (name, date, distance, elapsed time formatted as HH:MM:SS); selected state; confirm button; "No activity found" EmptyState
+- [X] T067 [P] [US4] Create `components/results/LeaderboardTable.tsx`: ranked table (rank, name, team color dot, team name, formatted time, submitted date); loading skeleton; EmptyState "No results yet"
+- [X] T068 [US4] Create result submission page `app/(participant)/submit/[stageNumber]/page.tsx`: show stage info, render ActivityPicker with activities from `/api/participant/activities/[stageNumber]`; POST to `/api/results` on confirm; redirect to `/results/[stageNumber]` on success; duplicate submission notice if already submitted
+- [X] T069 [US4] Create stage results page `app/(public)/results/[stageNumber]/page.tsx`: fetch leaderboard from `GET /api/results/[stageNumber]` (RSC), render LeaderboardTable, stage header; "Submit your result" CTA for authenticated runners who haven't submitted yet
+- [X] T070 [US4] Add "Submit Result" button to stage detail page `app/(public)/route/[stageNumber]/page.tsx`: visible only for authenticated runners, links to `/submit/[stageNumber]`
 
 **Checkpoint**: US4 functional. Full result submission flow works. Leaderboard updates on page load after submission.
 
@@ -184,15 +184,15 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T071 [P] [US5] Write unit tests for standings calculation in `tests/unit/standings/calculate.test.ts`: sorts by completedStages DESC then totalSeconds ASC then name ASC; runner with 0 results appears last; tie-breaking by name works correctly; handles empty input
-- [ ] T072 [P] [US5] Write integration tests for `GET /api/standings` in `tests/integration/api/standings.test.ts`: returns all runners ranked correctly, runners with more stages appear above those with fewer, completedStages count is accurate
+- [X] T071 [P] [US5] Write unit tests for standings calculation in `tests/unit/standings/calculate.test.ts`: sorts by completedStages DESC then totalSeconds ASC then name ASC; runner with 0 results appears last; tie-breaking by name works correctly; handles empty input
+- [X] T072 [P] [US5] Write integration tests for `GET /api/standings` in `tests/integration/api/standings.test.ts`: returns all runners ranked correctly, runners with more stages appear above those with fewer, completedStages count is accurate
 
 ### Implementation for User Story 5
 
-- [ ] T073 [P] [US5] Create standings calculation function in `lib/standings/calculate.ts`: `calculateStandings(runners: RunnerWithResults[]): Standing[]` — pure function, no DB dependency, sort by completedStages DESC → totalSeconds ASC → name ASC; mark runners with incomplete stages
-- [ ] T074 [P] [US5] Create `GET /api/standings/route.ts`: aggregate query via Prisma (`groupBy` or raw), map to `Standing[]`, return ranked array per api-routes.md contract
-- [ ] T075 [P] [US5] Create `components/standings/GCTable.tsx`: ranked table with position, runner name link, team color dot, team name, stages completed badge, total time; leader row highlighted in race yellow; loading skeleton; EmptyState "No results have been submitted yet"
-- [ ] T076 [US5] Create standings page `app/(public)/standings/page.tsx`: fetch standings (RSC), render GCTable, page title "General Classification", race context copy; add to Nav as "Standings" link
+- [X] T073 [P] [US5] Create standings calculation function in `lib/standings/calculate.ts`: `calculateStandings(runners: RunnerWithResults[]): Standing[]` — pure function, no DB dependency, sort by completedStages DESC → totalSeconds ASC → name ASC; mark runners with incomplete stages
+- [X] T074 [P] [US5] Create `GET /api/standings/route.ts`: aggregate query via Prisma (`groupBy` or raw), map to `Standing[]`, return ranked array per api-routes.md contract
+- [X] T075 [P] [US5] Create `components/standings/GCTable.tsx`: ranked table with position, runner name link, team color dot, team name, stages completed badge, total time; leader row highlighted in race yellow; loading skeleton; EmptyState "No results have been submitted yet"
+- [X] T076 [US5] Create standings page `app/(public)/standings/page.tsx`: fetch standings (RSC), render GCTable, page title "General Classification", race context copy; add to Nav as "Standings" link
 
 **Checkpoint**: US5 functional. `/standings` shows correct rankings. Updates on next page load after new results submitted.
 
@@ -208,23 +208,23 @@
 
 > **Write these FIRST. Confirm they FAIL before implementing.**
 
-- [ ] T077 [P] [US6] Write integration tests for admin stage CRUD in `tests/integration/api/admin/stages.test.ts`: POST creates stage (201), PATCH updates stage (200), DELETE removes stage (204), DELETE blocked when results exist (409), all routes return 401 without session and 403 without admin role
-- [ ] T078 [P] [US6] Write integration tests for admin team and runner CRUD in `tests/integration/api/admin/teams.test.ts` and `runners.test.ts`: same auth gate pattern; DELETE team blocked when runners assigned; runner creation with valid teamId succeeds
-- [ ] T079 [P] [US6] Write unit tests for admin input validation in `tests/unit/validation/admin.test.ts`: StageSchema rejects stageNumber outside 1–8, TeamSchema rejects invalid hex color, RunnerSchema requires teamId
+- [X] T077 [P] [US6] Write integration tests for admin stage CRUD in `tests/integration/api/admin/stages.test.ts`: POST creates stage (201), PATCH updates stage (200), DELETE removes stage (204), DELETE blocked when results exist (409), all routes return 401 without session and 403 without admin role
+- [X] T078 [P] [US6] Write integration tests for admin team and runner CRUD in `tests/integration/api/admin/teams.test.ts` and `runners.test.ts`: same auth gate pattern; DELETE team blocked when runners assigned; runner creation with valid teamId succeeds
+- [X] T079 [P] [US6] Write unit tests for admin input validation in `tests/unit/validation/admin.test.ts`: StageSchema rejects stageNumber outside 1–8, TeamSchema rejects invalid hex color, RunnerSchema requires teamId
 
 ### Implementation for User Story 6
 
-- [ ] T080 [P] [US6] Create `POST/PATCH/DELETE /api/admin/stages/` routes in `app/api/admin/stages/route.ts` and `app/api/admin/stages/[id]/route.ts`: validate with StageSchema (Zod), enforce admin role check, block DELETE when results exist (409), return typed responses
-- [ ] T081 [P] [US6] Create `POST/PATCH/DELETE /api/admin/teams/` routes in `app/api/admin/teams/route.ts` and `app/api/admin/teams/[id]/route.ts`: validate with TeamSchema, block DELETE when runners assigned (409)
-- [ ] T082 [P] [US6] Create `POST/PATCH/DELETE /api/admin/runners/` routes in `app/api/admin/runners/route.ts` and `app/api/admin/runners/[id]/route.ts`: validate with RunnerSchema, cascade delete StravaToken
-- [ ] T083 [US6] Create admin login page `app/(admin)/login/page.tsx`: credentials form (username + password), POST to NextAuth CredentialsProvider, redirect to `/admin/stages` on success, error message on failure
-- [ ] T084 [US6] Create admin layout `app/(admin)/admin/layout.tsx`: sidebar nav (Stages, Teams, Runners), admin header, sign-out button
-- [ ] T085 [P] [US6] Create `components/admin/StageForm.tsx`: form for all Stage fields (stageNumber, name, date, startLocation, endLocation, distanceKm, stageType dropdown, elevationDescription, description, stravaEmbedUrl); Zod-validated client-side; used for both create and edit
-- [ ] T086 [P] [US6] Create `components/admin/TeamForm.tsx`: team name, hex color picker, logoUrl field
-- [ ] T087 [P] [US6] Create `components/admin/RunnerForm.tsx`: runner name, team selector (dropdown of existing teams), stravaHandle hint field
-- [ ] T088 [US6] Create admin stages page `app/(admin)/admin/stages/page.tsx`: list all stages in a table with edit/delete actions; "New Stage" button opens StageForm in a dialog; calls POST/PATCH/DELETE admin API routes
-- [ ] T089 [US6] Create admin teams page `app/(admin)/admin/teams/page.tsx`: list teams with runner count; create/edit/delete via TeamForm dialog; calls team admin routes
-- [ ] T090 [US6] Create admin runners page `app/(admin)/admin/runners/page.tsx`: list runners with team assignment; create/edit/delete via RunnerForm dialog; calls runner admin routes
+- [X] T080 [P] [US6] Create `POST/PATCH/DELETE /api/admin/stages/` routes in `app/api/admin/stages/route.ts` and `app/api/admin/stages/[id]/route.ts`: validate with StageSchema (Zod), enforce admin role check, block DELETE when results exist (409), return typed responses
+- [X] T081 [P] [US6] Create `POST/PATCH/DELETE /api/admin/teams/` routes in `app/api/admin/teams/route.ts` and `app/api/admin/teams/[id]/route.ts`: validate with TeamSchema, block DELETE when runners assigned (409)
+- [X] T082 [P] [US6] Create `POST/PATCH/DELETE /api/admin/runners/` routes in `app/api/admin/runners/route.ts` and `app/api/admin/runners/[id]/route.ts`: validate with RunnerSchema, cascade delete StravaToken
+- [X] T083 [US6] Create admin login page `app/(admin)/login/page.tsx`: credentials form (username + password), POST to NextAuth CredentialsProvider, redirect to `/admin/stages` on success, error message on failure
+- [X] T084 [US6] Create admin layout `app/(admin)/admin/layout.tsx`: sidebar nav (Stages, Teams, Runners), admin header, sign-out button
+- [X] T085 [P] [US6] Create `components/admin/StageForm.tsx`: form for all Stage fields (stageNumber, name, date, startLocation, endLocation, distanceKm, stageType dropdown, elevationDescription, description, stravaEmbedUrl); Zod-validated client-side; used for both create and edit
+- [X] T086 [P] [US6] Create `components/admin/TeamForm.tsx`: team name, hex color picker, logoUrl field
+- [X] T087 [P] [US6] Create `components/admin/RunnerForm.tsx`: runner name, team selector (dropdown of existing teams), stravaHandle hint field
+- [X] T088 [US6] Create admin stages page `app/(admin)/admin/stages/page.tsx`: list all stages in a table with edit/delete actions; "New Stage" button opens StageForm in a dialog; calls POST/PATCH/DELETE admin API routes
+- [X] T089 [US6] Create admin teams page `app/(admin)/admin/teams/page.tsx`: list teams with runner count; create/edit/delete via TeamForm dialog; calls team admin routes
+- [X] T090 [US6] Create admin runners page `app/(admin)/admin/runners/page.tsx`: list runners with team assignment; create/edit/delete via RunnerForm dialog; calls runner admin routes
 
 **Checkpoint**: US6 functional. Admin can log in, create all 8 stages and teams/runners. Public site reflects changes immediately.
 
@@ -234,16 +234,16 @@
 
 **Purpose**: Mobile responsiveness, performance, accessibility, homepage hero, CI.
 
-- [ ] T091 [P] Create homepage hero section `app/(public)/page.tsx`: full-bleed race imagery or gradient, race title overlay, countdown timer to first stage date (fetched from DB or config), "View Route" and "View Teams" CTAs — styled per letour.fr visual reference
-- [ ] T092 [P] Audit and implement mobile layouts for all public pages (route list, stage detail, teams, runner profile, standings) — verify all core sections functional at 375px per SC-005
-- [ ] T093 [P] Implement loading skeletons for all data-driven pages: route list, stage detail, teams list, team detail, runner profile, standings, stage leaderboard
-- [ ] T094 [P] Implement error boundaries in `app/error.tsx` and `app/(public)/route/error.tsx` etc.: human-readable error messages with retry CTA per Constitution III
-- [ ] T095 [P] Run axe-core accessibility audit on all public-facing pages; fix all critical and serious violations (WCAG 2.1 AA) per Constitution III quality gate
-- [ ] T096 [P] Add `<meta>` tags, Open Graph metadata, and page titles to all `app/**/page.tsx` files via Next.js `generateMetadata`
-- [ ] T097 Create GitHub Actions CI workflow in `.github/workflows/ci.yml`: `pnpm install` → `pnpm lint` → `pnpm test --coverage` → `pnpm build`; fail on coverage below 80%
-- [ ] T098 [P] Add Prisma seed script in `prisma/seed.ts`: populate all 8 stages with placeholder data for local development and demos
-- [ ] T099 [P] Validate `quickstart.md` by following it end-to-end in a clean environment; update any outdated steps
-- [ ] T100 [P] Final performance check: verify public page load ≤ 2s, API response p95 ≤ 300ms (read) / 500ms (write) using network tab or Vercel analytics
+- [X] T091 [P] Create homepage hero section `app/(public)/page.tsx`: full-bleed race imagery or gradient, race title overlay, countdown timer to first stage date (fetched from DB or config), "View Route" and "View Teams" CTAs — styled per letour.fr visual reference
+- [X] T092 [P] Audit and implement mobile layouts for all public pages (route list, stage detail, teams, runner profile, standings) — verify all core sections functional at 375px per SC-005
+- [X] T093 [P] Implement loading skeletons for all data-driven pages: route list, stage detail, teams list, team detail, runner profile, standings, stage leaderboard
+- [X] T094 [P] Implement error boundaries in `app/error.tsx` and `app/(public)/route/error.tsx` etc.: human-readable error messages with retry CTA per Constitution III
+- [X] T095 [P] Run axe-core accessibility audit on all public-facing pages; fix all critical and serious violations (WCAG 2.1 AA) per Constitution III quality gate
+- [X] T096 [P] Add `<meta>` tags, Open Graph metadata, and page titles to all `app/**/page.tsx` files via Next.js `generateMetadata`
+- [X] T097 Create GitHub Actions CI workflow in `.github/workflows/ci.yml`: `pnpm install` → `pnpm lint` → `pnpm test --coverage` → `pnpm build`; fail on coverage below 80%
+- [X] T098 [P] Add Prisma seed script in `prisma/seed.ts`: populate all 8 stages with placeholder data for local development and demos
+- [X] T099 [P] Validate `quickstart.md` by following it end-to-end in a clean environment; update any outdated steps
+- [X] T100 [P] Final performance check: verify public page load ≤ 2s, API response p95 ≤ 300ms (read) / 500ms (write) using network tab or Vercel analytics
 
 ---
 
