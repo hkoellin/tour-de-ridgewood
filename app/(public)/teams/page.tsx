@@ -34,7 +34,7 @@ export default async function TeamsPage() {
           Teams
         </h1>
         <p className="text-gray-600 max-w-xl">
-          Meet the teams competing in this year's Tour de Ridgewood. Click any team to see its
+          Meet the teams competing in this year&apos;s Tour de Ridgewood. Click any team to see its
           full roster.
         </p>
       </div>

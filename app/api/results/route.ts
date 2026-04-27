@@ -32,11 +32,11 @@ export async function POST(req: NextRequest) {
         runnerId,
         stageId,
         elapsedSeconds,
-        stravaActivityId: stravaActivityId ?? null,
+        stravaActivityId,
       },
       update: {
         elapsedSeconds,
-        stravaActivityId: stravaActivityId ?? null,
+        stravaActivityId,
       },
     });
 

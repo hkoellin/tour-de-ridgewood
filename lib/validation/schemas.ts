@@ -42,7 +42,7 @@ export const RunnerSchema = z.object({
 export const ResultSchema = z.object({
   stageId: z.string().min(1, { message: "stageId is required" }),
   elapsedSeconds: z.number().int().positive({ message: "elapsedSeconds must be > 0" }),
-  stravaActivityId: z.string().min(1).optional(),
+  stravaActivityId: z.string().min(1, { message: "stravaActivityId is required" }),
 });
 
 export const AdminLoginSchema = z.object({

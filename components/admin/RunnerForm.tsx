@@ -68,7 +68,7 @@ export function RunnerForm({ initial = {}, teams, onSubmit, onCancel, isEdit = f
         <input name="stravaHandle" type="text" defaultValue={initial.stravaHandle}
           placeholder="e.g. @johndoe (optional hint)"
           className="w-full border border-gray-300 rounded px-3 py-2 text-sm" />
-        <p className="text-xs text-gray-500 mt-1">Used as a hint to link to the runner's Strava account.</p>
+        <p className="text-xs text-gray-500 mt-1">Used as a hint to link to the runner&apos;s Strava account.</p>
       </div>
 
       <div className="flex gap-3 pt-2">

@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
   return NextResponse.json(stage, { status: 201 });
 }
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   const authError = await requireAdmin();
   if (authError) return authError;
 

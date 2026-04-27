@@ -19,7 +19,7 @@ export default function RouteError({ error, reset }: ErrorProps) {
         Stage data unavailable
       </h1>
       <p className="text-gray-400 mb-8">
-        We couldn't load the stage information. Please try again.
+        We couldn&apos;t load the stage information. Please try again.
       </p>
       <div className="flex flex-wrap gap-3 justify-center">
         <button

@@ -68,7 +68,7 @@ export default async function StageResultsPage({ params }: ResultsPageProps) {
       {runnerId && !hasSubmitted && (
         <div className="bg-race-yellow/10 border border-race-yellow rounded-lg p-4 mb-8 flex items-center justify-between gap-4">
           <p className="text-sm font-semibold text-race-black">
-            You haven't submitted your result for this stage yet.
+            You haven&apos;t submitted your result for this stage yet.
           </p>
           <Link
             href={`/submit/${stage.stageNumber}`}

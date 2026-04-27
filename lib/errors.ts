@@ -76,7 +76,8 @@ export function badGateway(message = "Upstream service unavailable"): NextRespon
 export class StravaApiError extends Error {
   constructor(
     message: string,
-    public readonly status: number
+    public readonly status: number,
+    public readonly body?: unknown
   ) {
     super(message);
     this.name = "StravaApiError";

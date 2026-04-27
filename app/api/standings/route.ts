@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { calculateStandings } from "@/lib/standings/calculate";
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   const runners = await prisma.runner.findMany({
     select: {
       id: true,

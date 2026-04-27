@@ -14,7 +14,7 @@ interface SubmitPageProps {
 }
 
 export default function SubmitResultPage({ params }: SubmitPageProps) {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
   const stageNumber = params.stageNumber;
 
